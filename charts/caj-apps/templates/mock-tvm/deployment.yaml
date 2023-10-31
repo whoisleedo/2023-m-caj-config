@@ -6,7 +6,7 @@ metadata:
     app: m-caj-mock-tvm
     version: v1
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: m-caj-mock-tvm
@@ -24,7 +24,7 @@ spec:
             defaultMode: 420
       containers:
         - name: m-caj-mock-tvm
-          image: '{{ .Values.image.mockTVM.repo }}:{{ .Values.image.mockTVM.tag }}'
+          image: "{{ .Values.image.mockTVM.repo }}:{{ .Values.image.mockTVM.tag }}"
           ports:
             - name: http
               containerPort: 8080
