@@ -6,7 +6,7 @@ metadata:
     app: m-caj-masterfile
     version: v1
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: m-caj-masterfile
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: m-caj-masterfile
-          image: '{{ .Values.image.masterfile.repo }}:{{ .Values.image.masterfile.tag }}'
+          image: "{{ .Values.image.masterfile.repo }}:{{ .Values.image.masterfile.tag }}"
           ports:
             - name: http
               containerPort: 8080
